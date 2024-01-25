@@ -26,7 +26,7 @@ public class AuthService {
 
     private String ISS = "application::chat::authenticate";
     private String ALGORITHM = "HS256";
-    private int EXPIRE_IN = 3600000; //in milliseconds
+    private int EXPIRE_IN = 3600; //in milliseconds
     
     @Value("application.data.server_key")
     private String SERVER_KEY;

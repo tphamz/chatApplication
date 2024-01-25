@@ -34,7 +34,7 @@ public class AuthFilter extends OncePerRequestFilter{
             String JWTToken = this.getTokenFromHeader(request);
             if(JWTToken!=null){
                 User user = tokenService.authenticate(JWTToken);
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null /** replace with entitty later*/, new ArrayList<>()/** replace with policy later*/);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null /** replace with entitty key later*/, new ArrayList<>()/** replace with policy later*/);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
             filterChain.doFilter(request, response);
