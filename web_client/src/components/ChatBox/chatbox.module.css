@@ -1,0 +1,114 @@
+.chatbox{
+    display:flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    max-width: 800px;
+    background-color: rgb(250,250,250);
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.chat_content{
+    flex:auto;
+    padding: 25px 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.chat_form{
+    border-radius: 10px;
+    display:flex;
+    padding: 10px;
+}
+.chat_input{
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: 1px solid rgba(0,0,0, 0.1);
+    resize:none;
+    max-height:100px;
+    min-height:40px;
+    width:100%;
+    outline: none;
+}
+
+.rowflex{
+    display:flex;
+    width: 100%;
+}
+
+.columnflex{
+    display:flex;
+    flex-direction:column;
+}
+
+.message_avatar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: lightslategray;
+    width: 30px;
+    height: 30px;
+    margin-right:5px;
+    color: white;
+}
+.message_padding{
+    flex:auto;
+    min-width:50px;
+}
+
+.message_username{
+    left:5px;
+    position: absolute;
+    color: gray;
+    top: -14px;
+    font-size: 10px;
+}
+.message_container{
+    position: relative;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+}
+
+.message_content{
+    width:fit-content;
+    padding: 7px 10px;
+    font-size: 13px;
+    border-radius: 10px;
+    white-space: pre-line;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.message_received{
+    background-color:#eaeaea;
+    color: #424c4c;
+}
+
+.message_sent{
+    align-self: flex-end;
+    background-color: #3399ff;
+    color:white;
+}
+
+.message_text{
+    padding:5px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .chatbox{
+        background-color:rgb(47,50,50); 
+    }
+
+    .message_received{
+        background-color: #424c4c;
+        color: #f7f8f8;
+    }
+
+    .chat_input{
+        border: 1px solid rgb(95,99,104);
+    }
+}
