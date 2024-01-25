@@ -1,0 +1,30 @@
+services:
+  webservers:
+    image: publish/webserver
+    build: ./web_server
+    deploy:
+      replicas: 2
+    networks:
+      - chat_application
+    depends_on:
+      - cache
+
+  nginx:
+    build: ./load_balancer
+    container_name: load_balancer
+    ports:
+      - "80:80"
+    networks:
+      - chat_application
+    depends_on:
+      - webservers
+
+  cache:
+    image: redis:7.2-alpine
+    restart: always
+    ports: 
+      - "6379:6379"
+    networks:
+      - chat_application  
+networks:
+  chat_application:
